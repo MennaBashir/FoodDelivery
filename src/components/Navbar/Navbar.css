@@ -1,0 +1,78 @@
+:root{
+    --spread-color:#f57217;
+    --text-color:#49557e
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    align-items: center;
+}
+.navbar a span{
+    font-weight: 600;
+    font-size: 35px;
+    letter-spacing: -2px;
+    color: #85b140fa;
+    font-family:cursive
+}
+.navbar ul{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    font-size: 18px;
+    color: var(--text-color);
+    cursor: pointer;
+    position:relative
+}
+.navbar ul .active{
+    border-bottom: 2px solid var(--text-color) ;
+    padding-bottom: 2px;
+}
+.navbar .navbar-right{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+.navbar .navbar-right .search{
+cursor: pointer;
+}
+.navbar .navbar-right .basket{
+position: relative;
+cursor: pointer;
+}
+.navbar .navbar-right .basket .dot{
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #85b140fa;
+    top: -8px;
+    right: -8px;
+}
+.navbar .navbar-right .signin button{
+    background-color: transparent;
+    border-radius: 50px;
+    font-size: 16px;
+    color: var(--text-color);
+    padding: 10px 30px;
+    cursor: pointer;
+    border: 1px solid #eee;
+    transition: 0.3s;
+}
+.navbar .navbar-right .signin button:hover{
+    background-color: #eeeeee61;
+}  
+@media(max-width:1000px){
+    .navbar .navbar-right{
+        gap:10px
+    }
+    .navbar .navbar-right .signin button{
+        padding:8px 20px
+    }
+
+}
+@media(max-width:750px){
+    .navbar ul{
+        display:none
+    }
+}

@@ -1,0 +1,102 @@
+.cart{
+    margin-top: 100px;
+    overflow-x: auto;
+}
+.cart hr{
+    height: 1px;
+    border: none;
+    background-color: #e2e2e2;
+    margin-top: 4px;
+}
+.cart table{
+    width: 100%;
+    min-width: 440px;
+}
+.cart table td{
+    border-bottom: 1px solid #e2e2e2;
+}
+.cart table tr td{
+    margin: 20px;
+    padding-bottom: 7px;
+    padding-top: 7px;
+}
+.cart table tr .cross{
+    cursor: pointer;
+}
+.cart table thead{
+    color: grey;
+
+}
+.cart table tbody tr{
+    text-align: center;
+}
+.cart table tbody tr td img{
+width: 50px;
+}
+.cart-botom{
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+.cart-botom .total{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.cart-botom .details-total{
+    display: flex;
+    color: #555;
+    justify-content: space-between;
+    padding: 0px 10px;
+}
+.cart-botom hr{
+    margin: 10px 0px;
+}
+.cart-botom .checkout{
+    border: none;
+    background-color: #85b140fa;
+    color: white;
+    width: max(12vw,200px);
+    padding: 12px 0px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.cart-botom .promo-code{
+    flex: 1;
+}
+.cart-botom .promo-code p{
+color: #555;
+}
+.promo-code .promocode-input{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e2e2e2;
+    border-radius: 4px;
+}
+.promo-code .promocode-input input{
+    padding-left: 10px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+.promo-code .promocode-input button{
+    width: 150px;
+    padding: 12px 5px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+@media(max-width:750px){
+ .cart-botom{
+     flex-direction: column;
+ }
+ .promo-code{
+     justify-content: start;
+ }
+}

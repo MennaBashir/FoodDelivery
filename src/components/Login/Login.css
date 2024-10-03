@@ -1,0 +1,74 @@
+.allLogin{
+    width: 100%;
+    height: 100%;
+    background-color: #00000090;
+    position: absolute;
+    display: grid;
+}
+.login{
+    position: absolute;
+    place-self: center;
+    z-index: 20;
+    background-color: white;
+    padding: 25px 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 330px;
+    animation: fadeIn .5s;
+}
+.login .header_login{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+.login .header_login p{
+    font-weight: 600;
+    font-size: 20px;
+}
+.login .header_login img{
+    cursor: pointer;
+    height: 18px;
+}
+.login form .name input,
+.login form .email input,
+.login form .password input
+{
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #c9c9c9;
+    outline: none;
+}
+.login form [type="submit"]{
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #85b140fa;
+    outline: none;
+    background-color: #85b140fa;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.login form .privacy{
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    font-size: 13px;
+    color: #808080;
+}
+.login form .privacy [type="checkbox"]{
+    cursor: pointer;
+}
+.login .footer_login p{
+    color: #808080;
+}
+.login .footer_login p span{
+    color: #85b140fa;
+    cursor: pointer;
+}

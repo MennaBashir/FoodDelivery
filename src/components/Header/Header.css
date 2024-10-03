@@ -1,0 +1,30 @@
+.header{
+background-image: url('./../../assets/header_img.png');
+height: 34vw;
+margin: 30px auto;
+position: relative;
+background-size: contain;
+background-repeat: no-repeat;
+}
+.header-content button{
+    border: none;
+    border-radius: 50px;
+    font-weight: 500;
+    background-color: #fccc00;
+    padding: 4px 8px;
+    font-size: 10px;
+    color: #a90909;
+    cursor: pointer;
+    position: absolute;
+    bottom: 60px;
+    left: 55px;
+}
+@media(max-width:667px){
+    .header{
+        background-image:url('./../../assets/header_phone.jpg');
+        height:44vw;
+    }
+    .header-content button{
+        display:none
+    }
+   }
