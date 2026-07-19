@@ -3,32 +3,32 @@ import "./Login.css";
 import { assets } from "./../../assets/assets";
 const Login = ({ changeShow }) => {
     const [signup, setSignup] = useState(false);
+    const closeModal = () => changeShow(false);
     return (
-        <div className="allLogin">
-            <div className="login">
+        <div className="allLogin" onClick={closeModal}>
+            <div className="login" onClick={(e) => e.stopPropagation()}>
                 <div className="header_login">
-                    <p> {signup ? 'Sign Up' : 'Login'}</p>
-                    <img src={assets.cross_icon} onClick={() => changeShow(prev => prev = false)} alt="not" />
+                    <p>{signup ? 'Sign Up' : 'Login'}</p>
+                    <img src={assets.cross_icon} onClick={closeModal} alt="close" />
                 </div>
+                <p className="subtitle_login">
+                    {signup ? 'Create an account to get started.' : 'Welcome back! Please enter your details.'}
+                </p>
                 <div className="form">
-                    <form >
+                    <form onSubmit={(e) => e.preventDefault()}>
                         {signup && <div className="name">
                             <input type="text" name="name" placeholder="Your name" required />
                         </div>}
-                        <div className="email" >
+                        <div className="email">
                             <input type="email" name="email" placeholder="Your email" required />
-
                         </div>
                         <div className="password">
                             <input type="password" name="password" placeholder="Password" required />
                         </div>
-                        {!signup ?
-                            <input type="submit" value="Login" /> :
-                            <input type="submit" value="Create account" />
-                        }
+                        <input type="submit" value={signup ? 'Create account' : 'Login'} />
                         <div className="privacy">
                             <input type="checkbox" required />
-                            <p>By continuing. I agree to the terms of use & privacy policy </p>
+                            <p>By continuing, I agree to the terms of use & privacy policy.</p>
                         </div>
                     </form>
                 </div>

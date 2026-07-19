@@ -7,26 +7,56 @@
     justify-content: space-between;
     padding: 20px 0;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 15;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
 }
 .navbar a span{
     font-weight: 600;
     font-size: 35px;
     letter-spacing: -2px;
     color: #85b140fa;
-    font-family:cursive
+    font-family:cursive;
+    transition: 0.3s;
+}
+.navbar a span:hover{
+    opacity: 0.85;
 }
 .navbar ul{
     display: flex;
-    gap: 20px;
+    gap: 24px;
     list-style: none;
     font-size: 18px;
     color: var(--text-color);
     cursor: pointer;
     position:relative
 }
+.navbar ul a{
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.25s ease;
+}
+.navbar ul a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--spread-color);
+    transition: width 0.28s ease;
+}
+.navbar ul a:hover::after{
+    width: 100%;
+}
 .navbar ul .active{
-    border-bottom: 2px solid var(--text-color) ;
-    padding-bottom: 2px;
+    color: var(--spread-color);
+}
+.navbar ul .active::after{
+    width: 100%;
 }
 .navbar .navbar-right{
     display: flex;
@@ -40,6 +70,13 @@ cursor: pointer;
 position: relative;
 cursor: pointer;
 }
+.navbar .navbar-right .basket img{
+    width: 26px;
+    transition: transform 0.25s ease;
+}
+.navbar .navbar-right .basket:hover img{
+    transform: scale(1.08);
+}
 .navbar .navbar-right .basket .dot{
     position: absolute;
     height: 10px;
@@ -48,6 +85,7 @@ cursor: pointer;
     background-color: #85b140fa;
     top: -8px;
     right: -8px;
+    box-shadow: 0 0 0 2px #fff;
 }
 .navbar .navbar-right .signin button{
     background-color: transparent;
@@ -56,23 +94,47 @@ cursor: pointer;
     color: var(--text-color);
     padding: 10px 30px;
     cursor: pointer;
-    border: 1px solid #eee;
+    border: 1px solid #e2e2e2;
     transition: 0.3s;
 }
 .navbar .navbar-right .signin button:hover{
-    background-color: #eeeeee61;
-}  
+    background-color: var(--spread-color);
+    border-color: var(--spread-color);
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(245,114,23,0.28);
+}
 @media(max-width:1000px){
+    .navbar ul{
+        gap: 16px;
+        font-size: 16px;
+    }
     .navbar .navbar-right{
-        gap:10px
+        gap:16px
     }
     .navbar .navbar-right .signin button{
         padding:8px 20px
     }
-
 }
 @media(max-width:750px){
     .navbar ul{
         display:none
+    }
+    .navbar a span{
+        font-size: 30px;
+    }
+    .navbar .navbar-right{
+        gap: 20px;
+    }
+}
+@media(max-width:480px){
+    .navbar{
+        padding: 14px 0;
+    }
+    .navbar a span{
+        font-size: 26px;
+    }
+    .navbar .navbar-right .signin button{
+        padding: 7px 16px;
+        font-size: 14px;
     }
 }

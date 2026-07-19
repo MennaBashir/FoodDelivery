@@ -1,28 +1,39 @@
 .header{
 background-image: url('./../../assets/header_img.png');
 height: 34vw;
+max-height: 520px;
 margin: 30px auto;
 position: relative;
 background-size: contain;
 background-repeat: no-repeat;
+background-position: center;
+border-radius: 18px;
+overflow: hidden;
 }
 .header-content button{
     border: none;
     border-radius: 50px;
-    font-weight: 500;
+    font-weight: 600;
     background-color: #fccc00;
-    padding: 4px 8px;
-    font-size: 10px;
+    padding: clamp(6px, 1vw, 12px) clamp(14px, 2vw, 26px);
+    font-size: clamp(10px, 1.2vw, 16px);
     color: #a90909;
     cursor: pointer;
     position: absolute;
-    bottom: 60px;
-    left: 55px;
+    bottom: 12%;
+    left: 8%;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+.header-content button:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.22);
 }
 @media(max-width:667px){
     .header{
         background-image:url('./../../assets/header_phone.jpg');
         height:44vw;
+        border-radius: 14px;
     }
     .header-content button{
         display:none
